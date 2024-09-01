@@ -1,0 +1,58 @@
+{
+    "homeheader": {
+        "specialty": "Speacialty",
+        "searchspecialty": "Find a suitable specialty",
+        "agency": "Current Agency",
+        "select-agency": "Find a suitable agency",
+        "expert": "Expert",
+        "select-expert": "Find suitable expert",
+        "service combo": "Service package",
+        "select-combo": "Find a favorite combo ",
+        "support": "Support",
+        "search": "Search",
+        "welcome": "Welcome, "
+    },
+    "banner": {
+        "title1": " MEDICAL PLATFORM",
+        "title2": "COMPREHENSIVE HEALTH CARE",
+        "child1": "Specialized test",
+        "child2": "Remote test",
+        "child3": "General test",
+        "child4": "Discuss problems",
+        "child5": "Beauty tips"
+    },
+    "menu": {
+        "admin": {
+            "manage-user": "Users System",
+            "manage-expert": "Manage experts",
+            "manage-admin": "Manage admins",
+            "crud": "CRUD user ",
+            "crud-redux": "CRUD Redux",
+            "agency": "Agencies",
+            "manage-agency": "Manage agencies",
+            "specialty": "Specialty",
+            "manage-specialty": "Manage specialties",
+            "handbook": "Handbook",
+            "manage-handbook": "Manage handbook"
+        }
+    },
+    "manage-user": {
+        "add": "Add new user",
+        "email": "Email",
+        "password": "Password",
+        "first-name": "First name",
+        "last-name": "Last name",
+        "address": "Address",
+        "phone-number": "Phone number",
+        "gender": "Gender",
+        "position": "Position",
+        "role": "Role",
+        "image": "Image",
+        "save": "Save",
+        "edit": "Edit user"
+    },
+    "homepage": {
+        "outstanding-expert": "Outstanding expert",
+        "more-in4": "More infor"
+    }
+}

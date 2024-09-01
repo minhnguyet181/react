@@ -1,0 +1,58 @@
+{
+    "homeheader": {
+        "specialty": "Chuyên khoa",
+        "searchspecialty": "Tìm chuyên khoa phù hợp",
+        "agency": "Các cơ sở hiện có",
+        "select-agency": "Tìm cơ sở phù hợp",
+        "expert": "Chuyên gia",
+        "select-expert": "Chọn chuyên gia phù hợp",
+        "service combo": "Các gói dịch vụ",
+        "select-combo": "Chọn gói dịch vụ ",
+        "support": "Hỗ trợ",
+        "search": "Tìm kiếm",
+        "welcome": "Xin chào, "
+    },
+    "banner": {
+        "title1": " NỀN TẢNG Y TẾ",
+        "title2": "CHĂM SÓC SẮC ĐẸP TOÀN DIỆN",
+        "child1": "Kiểm tra chuyên khoa",
+        "child2": "Kiểm tra từ xa",
+        "child3": "Kiểm tra toàn diện",
+        "child4": "Trao đổi các vấn đề",
+        "child5": "Các tips làm đẹp"
+    },
+    "menu": {
+        "admin": {
+            "manage-user": "Người dùng",
+            "manage-expert": "Quản lý chuyên gia",
+            "manage-admin": "Quản lý admin",
+            "crud": "CRUD user ",
+            "crud-redux": "CRUD Redux",
+            "agency": "Cơ sở",
+            "manage-agency": "Quản lý cơ sở ",
+            "specialty": "Chuyên khoa",
+            "manage-specialty": "Quản lý chuyên khoa",
+            "handbook": "Cẩm nang",
+            "manage-handbook": "Quản lý cẩm nang"
+        }
+    },
+    "manage-user": {
+        "add": "Thêm mới người dùng",
+        "email": "Email",
+        "password": "Mật khẩu",
+        "first-name": "Tên",
+        "last-name": "Họ",
+        "address": "Địa chỉ",
+        "phone-number": "Số điện thoại",
+        "gender": "Giới tính",
+        "position": "Chức vụ",
+        "role": "Vai trò",
+        "image": "Hình ảnh",
+        "save": "Lưu",
+        "edit": "Sửa thông tin"
+    },
+    "homepage": {
+        "outstanding-expert": "Chuyên gia nổi bật",
+        "more-in4": "Xem thêm"
+    }
+}

@@ -1,0 +1,29 @@
+<svg width="400" height="120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(255,182,193);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(173,216,230);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+   <rect width="400" height="120" fill="url(#grad1)" />
+    <circle cx="68.75" cy="58.75" r="46.75" fill="white" />
+  
+  <!-- Circle sử dụng fill gradient -->
+  <circle cx="79.75" cy="52.2" r="37.125" fill="url(#grad1)" />
+  
+  <!-- Polygon -->
+  <polygon points="89.375,26.9375 
+    96.421875,48.438125 
+    118.628125,48.438125 
+    101.715625,62.4984375 
+    108.903125,84
+    89.375,71.625 
+    69.846875,84 
+    76.034375,62.4984375 
+    60.1734375,48.438125 
+    82.3453125,48.438125" fill="white" />
+  <text x="140" y="80" font-family="Arial" font-size="45" fill="white">MoonLight</text>
+
+
+</svg>
