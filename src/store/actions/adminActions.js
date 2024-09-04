@@ -244,3 +244,25 @@ export const saveInfoExpert = (data) => {
 
     }
 }
+export const fetchScheduleTime =() =>{
+    return async(dispatch,getState) =>{
+        try{
+            let res =await getAllcode ('TIME');
+            if(res && res.errCode === 0){
+                dispatch({
+                    type:actionTypes.FETCH_SCHEDULE_TIME_SUCCESS,
+                    dataTime: res.data
+                })
+            } else {
+                dispatch({
+                    type:actionTypes.FETCH_SCHEDULE_TIME_FAILED
+                })
+            }
+
+        } catch(e){
+            dispatch({
+                type:actionTypes.FETCH_SCHEDULE_TIME_FAILED
+            })
+        }
+    }
+}

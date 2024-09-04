@@ -57,5 +57,11 @@
     "homepage": {
         "outstanding-expert": "Outstanding expert",
         "more-in4": "More infor"
+    },
+    "manage-schedule":{
+        "title" : "Manage expert's schedule",
+        "choose-expert":"Choose expert",
+        "choose-date":"Choose date",
+        "save":"Save infor"
     }
 }

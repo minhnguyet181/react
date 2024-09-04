@@ -117,7 +117,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchAllExpert: (id) => dispatch(actions.fetchAllExpert())
+        fetchAllExpert: () => dispatch(actions.fetchAllExpert())
     };
 };
 

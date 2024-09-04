@@ -57,5 +57,11 @@
     "homepage": {
         "outstanding-expert": "Chuyên gia nổi bật",
         "more-in4": "Xem thêm"
+    },
+    "manage-schedule":{
+        "title" : "Quan ly lich hen cua chuyen gia",
+        "choose-expert":"Chon chuyen gia",
+        "choose-date":"Chon ngay",
+        "save":"Luu thong tin"
     }
 }

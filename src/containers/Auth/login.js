@@ -29,6 +29,11 @@ class Login extends Component {
             isShowPassword: !this.state.isShowPassword
         })
     }
+    handleKeyDown = (event) => {
+        if(event.key === "Enter" || event.keyCode === 13){
+            this.handleLoginApi();
+        }
+    }
     handleLoginApi = async () => {
         this.setState({
             message: ''
@@ -75,7 +80,8 @@ class Login extends Component {
                                 <input className='form-control'
                                     type={this.state.isShowPassword ? 'text' : 'password'}
                                     placeholder='Enter your password' value={this.state.password}
-                                    onChange={(event) => this.handleOnChangePassword(event)}
+                                    onChange={(event) => this.handleOnChangePassword(event)  }
+                                                        onKeyDown = {(event) => this.handleKeyDown(event)}
                                 />
                                 <span onClick={() => { this.handleShowPassword() }}>
                                     <i className={this.state.isShowPassword ? 'far fa-eye' : 'far fa-eye-slash'}></i>
