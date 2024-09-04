@@ -34,7 +34,10 @@
             "manage-specialty": "Manage specialties",
             "handbook": "Handbook",
             "manage-handbook": "Manage handbook"
-        }
+        },
+"expert":{
+     "manage-schedule": " Manage schedule "
+}
     },
     "manage-user": {
         "add": "Add new user",

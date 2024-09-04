@@ -13,13 +13,19 @@ export const adminMenu = [
 
             },
             {
-                name: 'menu.admin.manage-expert', link: '/system/manage-expert'
+                name: 'menu.admin.manage-expert', link: '/system/user-expert'
 
             },
             {
-                name: 'menu.admin.manage-admin', link: '/system/user-admin'
+        name: 'menu.expert.manage-user',
+        menus: [
+            {
+                name: 'menu.expert.manage-schedule ', link: '/system/manage-schedule'
 
-            },
+            }
+            
+        ]
+    }
 
         ]
     },
@@ -50,4 +56,18 @@ export const adminMenu = [
             },
         ]
     },
+];
+export const expertMenu = [
+    {
+        name: 'menu.expert.manage-user',
+        menus: [
+            {
+                name: 'menu.expert.manage-schedule ', link: '/system/manage-schedule'
+
+            }
+            
+        ]
+    }
+    
+
 ];
