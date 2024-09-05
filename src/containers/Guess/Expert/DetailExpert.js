@@ -5,7 +5,7 @@ import { getinfoExpert } from '../../../services/userService';
 import './DetailExpert.scss'
 import { LANGUAGES } from '../../../utils';
 import * as actions from '../../../store/actions';
-
+import ExpertSchedule from './ExpertSchedule.js';
 class DetailExpert extends Component {
     constructor(props) {
         super(props);
@@ -44,8 +44,8 @@ class DetailExpert extends Component {
             />
             <div className="expert-detail-container">
                 <div className="intro-expert">
-                    <div className="content-left"  style={{ backgroundImage:`url`}}>
-                        
+                    <div className="content-left" >
+                        <ExpertSchedule expertId={detailExp && detailExp.id ? detailExp.id :-1}   />
                     </div>
                        <div className="content-right">
                         <div className='up'>
@@ -58,7 +58,12 @@ class DetailExpert extends Component {
                        </div>
                 </div>
                    <div className='schedule-expert'>
+                   <div className="content-left" >
+                        <ExpertSchedule expertId={detailExp && detailExp.id ? detailExp.id :-1}   />
+                    </div>
+                    <div className='content-right'>
 
+                    </div>
                    </div>
                    <div className='detail-info-expert'>
                    {  detailExp && detailExp.Markdown && detailExp.Markdown.contentHTML &&
