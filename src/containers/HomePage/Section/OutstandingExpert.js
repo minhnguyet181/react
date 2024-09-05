@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import Slider from 'react-slick';
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from '../../../utils';
-
+import {withRouter} from 'react-router';
 class OustandingExpert extends Component {
     constructor(props) {
         super(props)
@@ -22,10 +22,16 @@ class OustandingExpert extends Component {
     componentDidMount() {
         this.props.loadTopExperts();
     }
+    handleviewDetailExp = (expert) =>{
+        if(this.props.history) {
+            this.props.history.push(`/detail-expert/${expert.id}`)
+
+        }
+    }
     render() {
         let arrExperts = this.state.arrExperts;
         let { language } = this.props;
-        arrExperts = arrExperts.concat(arrExperts).concat(arrExperts)
+     
         console.log(arrExperts);
         return (
             <div className='section-share section-outstanding-expert'>
@@ -40,7 +46,7 @@ class OustandingExpert extends Component {
                                 let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName}`;
                                 let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
                                 return (
-                                    <div className='section-customize' key={index}>
+                                    <div className='section-customize' key={index} onClick={() => this.handleviewDetailExp(item)} >
                                         <div className='customize-border'>
                                             <div className='outer-bg'>
                                                 <div className='bg-image section-outstanding-expert' />
@@ -77,4 +83,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OustandingExpert);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OustandingExpert)) ;
