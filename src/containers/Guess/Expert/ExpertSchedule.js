@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import HomeHeader from '../../HomePage/HomeHeader';
 import { getinfoExpert } from '../../../services/userService';
-import './ExpertSchedule.scss'
+import './ExpertSchedule.scss';
+import moment from 'moment';
 import { LANGUAGES } from '../../../utils';
 import * as actions from '../../../store/actions';
-import localization from 'moment/loacle/vi';
+import localization from 'moment/locale/vi';
 import { getScheduleExpert } from '../../../services/userService';
 class ExpertSchedule extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            allDays: []
+            allDays: [],
+            availableTime:[]
         }
     }
   async  componentDidMount() {
@@ -24,7 +26,8 @@ class ExpertSchedule extends Component {
         for(let i=0;i<7;i++) {
             let obj ={};
             if(language === LANGUAGES.VI) {
-                obj.label = moment (new Date ()).add(i, 'days').format('dddd - DD/MM');
+                let labelVi = moment (new Date ()).add(i, 'days').format('dddd - DD/MM');
+                obj.label = this.capitalizeFirstLetter(labelVi)
             }  else {
                 obj.label = moment(new Date ()).add(i, 'days').locale('en').format('ddd - DD/MM');
             }
@@ -33,6 +36,9 @@ class ExpertSchedule extends Component {
         this.setState({
             allDays:allDays,
         })
+    }
+    capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
         if(this.props.language !== prevProps.language) {
@@ -44,48 +50,48 @@ class ExpertSchedule extends Component {
             let expertId = this.props.expertId;
             let date = event.target.value
             let res = await getScheduleExpert(expertId,date);
+            if(res && res.errCode === 0) {
+                this.setState({
+                    availableTime:res.data ? res.data:[]
+                })
+            }
         }
      }
     render() {
-     let {allDays} = this.state;
+     let {allDays,availableTime} = this.state;
+     let{language} = this.props;
         return (
-            <>
-            <HomeHeader
-                isShowBanner = {false}
-            />
-            <div className="expert-detail-container">
-                <div className="intro-expert">
-                    <div className="content-left" >
-                        <ExpertSchedule expertId={detailExp && detailExp.id ? detailExp.id :-1}   />
-                    </div>
-                       <div className="content-right">
-                        <div className='up'>
-                        {language === LANGUAGES.VI? nameVi : nameEn}
-                        </div>
-                           <div className='down'>
-                                {  detailExp && detailExp.Markdown && detailExp.Markdown.description &&
-                                  <span> {detailExp.Markdown.description} </span>}
-                           </div>
-                       </div>
-                </div>
-                   <div className='schedule-expert'>
-                   <div className="content-left" >
-                        <ExpertSchedule expertId={detailExp && detailExp.id ? detailExp.id :-1}   />
-                    </div>
-                    <div className='content-right'>
+        <div className='expert-schedule-container'>
+        <div className='all-schedule'>
+            <select onChange={(event) => this.handleOnChangeSelect(event)}>
+               {allDays && allDays.length>0 && allDays.map((item,index) =>{
+                return( 
+                    <option value={item.value} key={index}>
+                            {item.label}
+                    </option>
+                )
+               } )}
+            </select>
+        </div>
+        <div className='available-time'>
+        <div className='text-calendar'>
+                 <i className='fas fa-calender-alt'> <span>Lich kham</span></i>
 
-                    </div>
-                   </div>
-                   <div className='detail-info-expert'>
-                   {  detailExp && detailExp.Markdown && detailExp.Markdown.contentHTML &&
-                       <div dangerouslySetInnerHTML ={{ __html: detailExp.Markdown.contentHTML}}>  </div>        }
-                   </div>
-                   <div className='comment-expert'>
-
-                   </div>
-            </div>
-            </>
-            
+        </div>
+        <div className='time-content'>
+          {availableTime && availableTime.length >0 ? 
+          availableTime.map((item,index) =>{
+            let timeDisplay =language === LANGUAGES.VI ? 
+            item.timeTypeData.valueVi :  item.timeTypeData.valueEn;
+            return(
+                <button key={index} > {timeDisplay} </button>
+            )
+          })
+        :  <div> Thoi gian khong phu hop  </div>
+        }
+        </div>
+        </div>
+        </div>            
 
         );
     }
@@ -93,7 +99,7 @@ class ExpertSchedule extends Component {
 }
 const mapStateToProps = state => {
     return {
-        listUser: state.admin.users
+        language:state.app.language
     };
 };
 

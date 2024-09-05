@@ -15,12 +15,14 @@ class ManageSchedule extends Component {
             listExp : [],
             selectedExp:{},
             currentDate:'',
-            rangeTime:[]
+            rangeTime:[],
+            minDate: moment().subtract(1,'days')
+        
         }
     }
     componentDidMount () {
         this.props.fetchAllExpert();
-        this.props.fetchAllSchedule();
+        this.props.fetchScheduleTime();
     }
     componentDidUpdate(prevProps,prevState,snapshot) {
         if(prevProps.allExp !== this.props.allExp) {
@@ -126,7 +128,7 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = dispatch =>{
     return{
         fetchAllExpert:() => dispatch(actions.fetchAllExpert()),
-        fetchAllSchedule:() => dispatch(actions.fetchAllSchedule())
+        fetchScheduleTime:() => dispatch(actions.fetchScheduleTime())
     };
 }
 export default connect(mapStateToProps,mapDispatchToProps)(ManageSchedule);

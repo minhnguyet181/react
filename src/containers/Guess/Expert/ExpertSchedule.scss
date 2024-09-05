@@ -1,0 +1,51 @@
+.expert-schedule-container{
+    border-right: 1px solid grey;
+    height: 100%;
+    .all-schedule{
+        select{
+            border-bottom: 1px solid #ddd;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 0;
+            color: #337ab7;
+            font-weight: 600;
+            option{
+                cursor: pointer;
+            }
+        }
+    }
+    .available-time{
+        .text-calendar{
+            margin: 10px 0;
+            color: #333;
+            span{
+                text-transform: uppercase;
+                margin-left: 5px;
+
+            }
+        }
+        .time-content {
+            display: flex;
+            gap: 15px;
+            flex-wrap:wrap ;
+            button{
+                padding: 8px 12px;
+                border: none;
+                outline: none; 
+                border-radius: 5px;
+                background-color: yellow;
+                min-width: 100px;
+                font-weight: 600;
+                color: black;
+                   &:hover{
+                    background-color: #337ab7;
+                    color: white;
+                   }
+
+            }
+        }
+    }
+}

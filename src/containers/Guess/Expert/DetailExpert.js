@@ -30,7 +30,7 @@ class DetailExpert extends Component {
     }
 
     render() {
-        let {language} = thhis.props;
+        let {language} = this.props;
         let{detailExp} = this.state;
         let nameVi='' , nameEn ='';
         if(detailExp && detailExp.positionData){

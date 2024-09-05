@@ -34,8 +34,8 @@ const crInfoExpert = (data) => {
 const getinfoExpert = (inputId) =>{
     return axios.get(`/api/get-info-expert?id=${inputId}`);
 }
-const getScheduleExpert =() =>{
-    return axios.get(`/api/get-schedule-expert`);
+const getScheduleExpert =(expertId,date) =>{
+    return axios.get(`/api/get-schedule-expert?expertId=${expertId}&date=${date}`);
 }
 export {
     handleLoginApi, getAllUsers,

@@ -80,7 +80,7 @@ class Login extends Component {
                                 <input className='form-control'
                                     type={this.state.isShowPassword ? 'text' : 'password'}
                                     placeholder='Enter your password' value={this.state.password}
-                                    onChange={(event) => this.handleOnChangePassword(event)  }
+                                    onChange={(event) => {this.handleOnChangePassword(event)}}
                                                         onKeyDown = {(event) => this.handleKeyDown(event)}
                                 />
                                 <span onClick={() => { this.handleShowPassword() }}>

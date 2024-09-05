@@ -79,24 +79,7 @@ class UserRedux extends Component {
             })
         }
     }
-    // handleOnChangeImage = async (event) => {
-    //     let data = event.target.files;
-    //     let file = data[0];
-    //     if (file) {
-    //         let base64 = await CommonUtils.getBase64(file);
-    //         let objectUrl = URL.createObjectURL(file);
-    //         this.setState({
-    //             previewImgURL: objectUrl,
-    //             avatar: base64
-    //         })
-    //     }
-    // }
-    // openPreviewImage = () => {
-    //     if (!this.state.previewImgURL) return;
-    //     this.setState({
-    //         isOpen: true
-    //     })
-    // }
+    
     handleSaveUser = () => {
         let isValid = this.checkValidInput();
         if (isValid === false) return;
